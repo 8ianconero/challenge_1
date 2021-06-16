@@ -1,2 +1,2 @@
 # challenge_1
-Frontend Mentor first challenge.
+Frontend Mentor - Stats preview card component.

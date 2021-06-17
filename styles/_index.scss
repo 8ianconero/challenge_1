@@ -1,0 +1,66 @@
+*,  *:before, *:after{
+    box-sizing: border-box;
+    margin: 0;
+  }
+html{
+    font-size: 62.5%;
+}
+body {
+    background-color: $dark-blue;
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
+}
+img{
+    max-width: 100%;
+}
+main{
+    display: grid;
+    grid-template-columns: 326px;
+    grid-template-rows: 240px 540px;
+    justify-content: center;
+    align-content: center;
+    padding: 90px 23px;
+    section{
+        grid-row: 2/3;
+        background-color: $desaturated-blue;
+        border-radius: 0 0 20px 20px;
+        text-align: center;
+        padding: 40px 10px;
+    }
+    .background{
+        background: url("/img/image-header-mobile.jpg");
+        background-size: cover;
+        background-position: center;
+        background-color: $accent-color;
+        background-blend-mode: multiply;
+        border-radius:20px 20px 0 0;
+    }
+}
+h1{
+    color: $white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-size: 2.8rem;
+    
+    span{
+        color: $accent-color;
+    }
+}
+p{
+    color: $transparent-white;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+.stats{
+    h2{
+        color: $white;
+    }
+    p{
+        color: $transparent-white-1;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+}
+

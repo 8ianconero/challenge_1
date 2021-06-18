@@ -14,26 +14,63 @@ img{
     max-width: 100%;
 }
 main{
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 326px;
     grid-template-rows: 240px 540px;
     justify-content: center;
     align-content: center;
     padding: 90px 23px;
+
+    @include breakpoint-up(medium) {
+        grid-template-columns: 380px 380px;
+        grid-template-rows: 345px;
+        padding: 0;
+    }
+
+    @include breakpoint-up(large) {
+        grid-template-columns: 570px 540px;
+        grid-template-rows: 445px;
+    }
+
     section{
         grid-row: 2/3;
         background-color: $desaturated-blue;
         border-radius: 0 0 20px 20px;
         text-align: center;
         padding: 40px 10px;
+
+        @include breakpoint-up(medium) {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            border-radius: 20px 0 0 20px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        @include breakpoint-up(large) {
+            padding: 70px 70px 60px;
+        }
     }
     .background{
-        background: url("/img/image-header-mobile.jpg");
+        background: url("./img/image-header-mobile.jpg");
         background-size: cover;
         background-position: center;
         background-color: $accent-color;
         background-blend-mode: multiply;
         border-radius:20px 20px 0 0;
+
+        @include breakpoint-up(medium) {
+            background: url("./img/image-header-desktop.jpg");
+            background-size: cover;
+            background-position: center;
+            background-color: $accent-color;
+            background-blend-mode: multiply;
+            grid-column: 2/3;
+            grid-row: 1/2;
+            border-radius: 0 20px 20px 0;
+        }
+
     }
 }
 h1{
@@ -41,6 +78,11 @@ h1{
     margin-bottom: 20px;
     letter-spacing: 1px;
     font-size: 2.8rem;
+
+    @include breakpoint-up(large) {
+        margin-bottom: 30px;
+        font-size: 3.8rem;
+    }
     
     span{
         color: $accent-color;
@@ -51,16 +93,36 @@ p{
     margin-bottom: 40px;
     letter-spacing: 1px;
     line-height: 1.6;
+
+    @include breakpoint-up(large) {
+        margin-bottom: 70px;
+    }
 }
 .stats{
+
+    @include breakpoint-up(medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
     h2{
         color: $white;
+        @include breakpoint-up(medium) {
+            grid-column: span 1;
+            margin-bottom: 8px;
+        }
     }
     p{
         color: $transparent-white-1;
         font-size: 15px;
         text-transform: uppercase;
         margin-bottom: 20px;
+
+        @include breakpoint-up(medium) {
+            grid-row: -2 / -1;
+            margin-bottom: 0;
+        }
     }
 }
 

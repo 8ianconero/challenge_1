@@ -19,6 +19,7 @@ img {
 }
 
 main {
+  min-height: 100vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 326px;
@@ -33,6 +34,25 @@ main {
   padding: 90px 23px;
 }
 
+@media (min-width: 48rem) {
+  main {
+    -ms-grid-columns: 380px 380px;
+        grid-template-columns: 380px 380px;
+    -ms-grid-rows: 345px;
+        grid-template-rows: 345px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 87.5rem) {
+  main {
+    -ms-grid-columns: 570px 540px;
+        grid-template-columns: 570px 540px;
+    -ms-grid-rows: 445px;
+        grid-template-rows: 445px;
+  }
+}
+
 main section {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
@@ -43,8 +63,28 @@ main section {
   padding: 40px 10px;
 }
 
+@media (min-width: 48rem) {
+  main section {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    border-radius: 20px 0 0 20px;
+    padding: 20px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 87.5rem) {
+  main section {
+    padding: 70px 70px 60px;
+  }
+}
+
 main .background {
-  background: url("/img/image-header-mobile.jpg");
+  background: url("./img/image-header-mobile.jpg");
   background-size: cover;
   background-position: center;
   background-color: #aa5cdb;
@@ -52,11 +92,35 @@ main .background {
   border-radius: 20px 20px 0 0;
 }
 
+@media (min-width: 48rem) {
+  main .background {
+    background: url("./img/image-header-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #aa5cdb;
+    background-blend-mode: multiply;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    border-radius: 0 20px 20px 0;
+  }
+}
+
 h1 {
   color: white;
   margin-bottom: 20px;
   letter-spacing: 1px;
   font-size: 2.8rem;
+}
+
+@media (min-width: 87.5rem) {
+  h1 {
+    margin-bottom: 30px;
+    font-size: 3.8rem;
+  }
 }
 
 h1 span {
@@ -70,8 +134,32 @@ p {
   line-height: 1.6;
 }
 
+@media (min-width: 87.5rem) {
+  p {
+    margin-bottom: 70px;
+  }
+}
+
+@media (min-width: 48rem) {
+  .stats {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+}
+
 .stats h2 {
   color: white;
+}
+
+@media (min-width: 48rem) {
+  .stats h2 {
+    grid-column: span 1;
+    margin-bottom: 8px;
+  }
 }
 
 .stats p {
@@ -79,4 +167,11 @@ p {
   font-size: 15px;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+
+@media (min-width: 48rem) {
+  .stats p {
+    grid-row: -2 / -1;
+    margin-bottom: 0;
+  }
 }
